@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InstituteAdmissionInvoice" language="groovy" pageWidth="216" pageHeight="432" columnWidth="176" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f683db50-626d-4ed7-a5f1-4d2608557c42">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="212"/>
+	<parameter name="param_invoiceid" class="java.lang.String"/>
+	<parameter name="param_fee" class="java.lang.String"/>
+	<parameter name="param_studentid" class="java.lang.String"/>
+	<parameter name="param_studentname" class="java.lang.String"/>
+	<parameter name="param_employeeid" class="java.lang.String"/>
+	<parameter name="param_discount" class="java.lang.String"/>
+	<parameter name="param_netfee" class="java.lang.String"/>
+	<parameter name="param_payment" class="java.lang.String"/>
+	<parameter name="param_balance" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="48" y="0" width="128" height="45" uuid="282303f3-19e3-4ae1-95d7-caa88918edf3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VISION EDUCATION INSTITUTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="176" height="12" uuid="f899b6ac-e5b3-4d27-9026-be767b049007"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Contact No:0702686207/0112962963]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="176" height="12" uuid="d9c6dbae-91fd-400c-9a17-cb19e26271df"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[222/A/1, Makola North, Makola]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="2" width="45" height="66" uuid="ce36a156-207d-4cc3-8834-221c8259ed26"/>
+				<imageExpression><![CDATA["D:\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="794ed621-bea6-4504-bc57-747641dd3d66"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admission Invoice]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="38" y="32" width="138" height="12" uuid="1974aaa1-af34-4ba3-9549-45601d8b20bd"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="38" height="12" uuid="55dc3ae0-8ad8-4d69-b1bc-2fa6e41b771f"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="38" height="12" uuid="53dd2790-b3d4-4c37-9fbc-6bcbbc12b9d9"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="20" width="35" height="12" uuid="00ace8e1-b386-4db1-8b4f-a9f68f2e7a02"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{param_studentid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="20" width="103" height="12" uuid="82fe9fdc-8409-4705-a820-262667ac86b6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{param_studentname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="44" width="138" height="12" uuid="4a1a1ef8-1157-485b-b538-e15a98a883be"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{param_employeeid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="44" width="38" height="12" uuid="ea812f7b-9224-4af5-b2d0-20d445083057"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="0" width="76" height="20" uuid="034d02f1-8928-436f-b05a-2a59e4469694"/>
+				<textFieldExpression><![CDATA[$P{param_invoiceid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="122" height="20" uuid="49ccf5a8-249c-40d6-82dc-488716e107da"/>
+				<box topPadding="3" leftPadding="0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="0" width="54" height="20" uuid="b9850d99-6625-493d-b8cf-a29257a339a5"/>
+				<box topPadding="3" leftPadding="5"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fee]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="122" height="20" uuid="bf087f98-c0e3-4d40-9b5e-a7e35ed9121b"/>
+				<box topPadding="2" leftPadding="0"/>
+				<text><![CDATA[Admission Fee]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="0" width="54" height="20" uuid="e97da1f5-d620-4a33-8851-b17bd7515707"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{param_fee}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="108" width="176" height="40" uuid="2ec3a89e-ebcc-4564-a404-0bb6110e3254"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank you for register with our education institute]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="122" height="20" uuid="3cd5ec0c-74b9-4cd5-925d-130cb5061a52"/>
+				<box topPadding="5" leftPadding="0">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="61" width="122" height="20" uuid="38013e2a-c147-4971-82b0-c49fe2306735"/>
+				<box topPadding="5" leftPadding="0">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="40" width="54" height="20" uuid="2746288a-f056-48af-9c0e-11a966b5b5f8"/>
+				<box topPadding="5" leftPadding="5">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{param_payment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="61" width="54" height="20" uuid="e37c9fd0-bf79-4d96-b56d-5e4f9a0a622e"/>
+				<box topPadding="5" leftPadding="5">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{param_balance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="122" height="20" uuid="44c0942c-5918-4da0-a611-177a67096c33"/>
+				<box topPadding="5" leftPadding="0">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="20" width="54" height="20" uuid="03d132b2-f72b-41a0-a015-d2d5c5ed592e"/>
+				<box topPadding="5" leftPadding="5">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{param_netfee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="0" width="54" height="20" uuid="c4151644-295d-4701-b284-e323d164e2f0"/>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{param_discount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="122" height="20" uuid="618800d2-8358-411d-9d5a-a232d63014f7"/>
+				<box topPadding="5" leftPadding="0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
